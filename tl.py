@@ -5,8 +5,7 @@ import sys
 
 dbstore_directory = os.path.expanduser('~/.tl')
 dbfile_directory = os.path.expanduser('~/.tl/db')
-print(dbstore_directory)
-print(dbfile_directory)
+
 if not os.path.exists(dbfile_directory):
     try:
       os.makedirs(dbstore_directory)
@@ -33,7 +32,7 @@ def get():
 
 def add(message):
   with open(dbfile_directory, 'a') as listdb:
-    listdb.write('# '+message)
+    listdb.write('# '+message+"\n")
 
 if options.add:
   add(options.add)
